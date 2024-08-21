@@ -34,3 +34,6 @@ if uploaded_file is not None:
         st.write("It's a Dog!")
     else:
         st.write("It's a Cat!")
+
+streamlit run streamlit_app.py
+
