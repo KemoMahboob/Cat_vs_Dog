@@ -14,7 +14,7 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png
 
 if uploaded_file is not None:
     # Convert the uploaded file to an image
-    img = Image.open(uploaded_file)
+    image_path = Image.open(uploaded_file)
     
     # Display the uploaded image
     st.image(img, caption='Uploaded Image', use_column_width=True)
@@ -23,11 +23,12 @@ if uploaded_file is not None:
     
     # Preprocess the image to match the input format of the model
     img = img.resize((150, 150))  # Resize to the same size as used during model training
-    img_array = image.img_to_array(img) / 255.0  # Normalize the image
-    img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
-    
+    image = keras.utils.load_img(image_path)
+    input_arr = keras.utils.img_to_array(image)
+    input_arr = np.array([input_arr])  # Convert single image to a batch.
+    predictions = model.predict(input_arr)
+
     # Make prediction
-    prediction = model.predict(img_array)
     
     # Output the result
     if prediction[0] > 0.5:
