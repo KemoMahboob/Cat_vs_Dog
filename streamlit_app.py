@@ -35,5 +35,4 @@ if uploaded_file is not None:
     else:
         st.write("It's a Cat!")
 
-streamlit run streamlit_app.py
 
