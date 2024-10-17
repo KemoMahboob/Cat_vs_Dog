@@ -1,19 +1,6 @@
-# 🎈 Blank app template
+##### This project implements a machine learning model to classify images of cats and dogs. The model is trained on a labeled dataset of cat and dog images and aims to accurately predict whether a given image is of a cat or a dog.
 
-A simple Streamlit app template for you to modify!
-
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
-
-### How to run it on your own machine
-
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+# Project Overview
+#### Type of model: Convolutional Neural Network (CNN)
+#### Dataset: The model is trained on a dataset containing images of cats and dogs.
+#### Goal: Classify images as either 'Cat' or 'Dog' with high accuracy.
